@@ -1,38 +1,212 @@
-.App {
-  text-align: center;
+section.main-container {
+    width: 80%;
+    background-color: rgb(251, 251, 251);
+    height: 95vh;
+    margin:1rem auto;
+    padding: .5rem 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+section.main-container > header .search-bar {
+  width: 100%;
+  border: 1px solid rgb(227, 226, 226);
+  height: 40px;
+  padding-left: .5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header .search-bar:focus {
+  outline : none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.table-container {
+  width: 100%;
+  height: 650px;
+}
+
+table {
+  width: 100%;
+  margin-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  color: rgb(89, 87, 87);
+  height: 600px;
+  overflow:auto;
+}
+
+
+th{
+  border-bottom: 1px solid lightgrey;
+  padding: 1rem 0;
+}
+
+tr {
+  position: relative;
+}
+
+tr td {
+  border-bottom: 1px solid lightgrey;
+  font-size: 14px;
+  padding: 1rem 0;
+  color: rgb(88, 86, 86);
+  cursor: pointer;
+  animation: fadeOutFromBottom .4s ease-in-out 1;
+}
+
+tr:hover {
+  background-color:#fff;
+  color: #000;
+}
+
+td.action-btns span {
+   margin: 0 10px;
+   cursor: pointer;
+}
+
+.table-footer {
+  width: 87%;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.table-container button {
+   width: 7rem;
+   padding: .5rem 0;
+   font-weight: 600;
+   background-color: transparent;
+   border-radius: 5px;
+   cursor: pointer;
+   margin-top: 5px;
+}
+
+.edit-btn {
+  border: 1px solid purple;
+  color: purple;
+}
+
+.delete-btn {
+  color: rgb(255, 111, 111);
+  border: 1px solid red;
+  margin-left: 10px;
+}
+
+.table-container .delete-btn:hover {
+  background-color:red;
+  color: #fff;
+}
+
+.table-container .edit-btn:hover {
+  background-color:purple;
+  color: #fff;
+}
+
+.checkbox {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+ul.pagination {
+  list-style: none;
+  display: flex;
+  width: auto;
+  background-color: #fff;
+  padding: 1rem;
+}
+
+ul.pagination li {
+  font-size: 1rem;
+  border: 1px solid rgb(92, 92, 251);;
+  margin: 0 .5rem;
+  text-align: center;
+  width: 35px;
+  height: 35px;
+  display: inline-flex;
+  justify-content:center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all .1s ease-in;
 }
 
-.App-link {
-  color: #61dafb;
+ul.pagination li:hover {
+  background: rgb(62, 62, 255);
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+ul.pagination li:hover svg {
+  stroke: rgb(255, 255, 255);
+  fill: #fff;
+}
+
+.active {
+  background: rgb(62, 62, 255);
+  color: #fff;
+}
+
+.no-active {
+  color: rgb(17, 16, 16);
+  background: transparent;
+}
+
+#arrow-forward {
+  background : rgb(69, 56, 255);
+}
+
+#arrow-back {
+  background : rgb(69, 56, 255);
+}
+
+#arrow-forward svg {
+  stroke: rgb(255, 255, 255);
+  fill: #fff;
+}
+
+#arrow-back svg {
+  stroke: rgb(255, 255, 255);
+  fill: #fff;
+}
+
+.Edit-input-container {
+  height: 100%;
+  width: 70%;
+  position: absolute;
+  left:5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: -17px;
+}
+
+.Edit-input-container input {
+  height: 50px;
+  width: 300px;
+  border: none;
+  box-shadow: 0px 0px 2px 2px #f3f3f3;
+  border-radius: 5px;
+  padding-left: 15px;
+}
+
+.Edit-input-container input:focus {
+   outline: 1px solid lightgrey;
+}
+
+.show {
+  opacity:1;
+  z-index: 1;
+}
+
+.hide {
+  opacity: 0;
+  z-index: -1;
+}
+
+@keyframes fadeOutFromBottom {
+   from {
+     transform: translateY(30px);
+     opacity: .4;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+   }
 }
